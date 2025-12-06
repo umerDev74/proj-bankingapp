@@ -1,7 +1,7 @@
 
 import 'package:banking/view/source/authScreens/signupScreen.dart';
 import 'package:flutter/material.dart';
-
+//kjidsjf dioshf kdsfhkds isdhfds  idhf
 void main()
 {
  runApp(MyApp());
