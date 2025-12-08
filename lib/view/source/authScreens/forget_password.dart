@@ -1,4 +1,5 @@
 import 'package:banking/view/components/Textwidget.dart';
+import 'package:banking/view/components/forget_text.dart';
 import 'package:banking/view/components/num_controller.dart';
 import 'package:banking/view/components/small_text.dart';
 import 'package:banking/view/components/textButton-widget.dart';
@@ -38,10 +39,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
             padding: const EdgeInsets.all(8.0),
             child: NumController(num_hint: '  (+92)', controller: numcontroller),
           ),
-            Padding(
-              padding: const EdgeInsets.all(18.0),
-              child: Text('we texted you a code to verify your\nphone number'),
-            ),
+            ForgetText(forget_text: 'we texted you a code to verify your\nphone number', color: App_Colors.neutralcolor),
             SizedBox(height: 30,),
             Center(
               child: Container(

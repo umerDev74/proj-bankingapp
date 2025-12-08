@@ -1,4 +1,5 @@
 
+import 'package:banking/view/source/authScreens/forget.2.dart';
 import 'package:banking/view/source/authScreens/forget_password.dart';
 import 'package:banking/view/source/authScreens/sign_in_Screen.dart';
 import 'package:banking/view/source/authScreens/sign_up_Screen.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:ForgetPassword(),
+      home:Forget_2(),
     );
   }
 }
