@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class textformfield extends StatelessWidget {
-final String hintText;
-final Color hintcolor;
-final Color style;
-final FontWeight fontWeight;
-final TextEditingController controller;
-  const textformfield({super.key,required this.controller,required this.hintText,
-  required this.fontWeight,
+class NameController extends StatelessWidget {
+
+  final String namehint;
+  final Color hintcolor;
+  final Color style;
+  final TextEditingController controller;
+  const NameController({super.key,required this.namehint,required this.controller,
   this.hintcolor=Colors.black54,
   this.style=Colors.black54});
 
@@ -16,15 +15,15 @@ final TextEditingController controller;
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(),
-        borderRadius: BorderRadius.circular(10)
+          border: Border.all(),
+          borderRadius: BorderRadius.circular(10)
       ),
       child: Padding(
         padding: const EdgeInsets.only(left: 12),
         child: TextFormField(
           style: TextStyle(color: style,),
           decoration: InputDecoration(
-            hintText: hintText,
+            hintText: namehint,
             border: InputBorder.none,
             hintStyle:GoogleFonts.poppins(color: hintcolor),
           ),
