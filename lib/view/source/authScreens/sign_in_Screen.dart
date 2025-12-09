@@ -1,7 +1,11 @@
 import 'package:banking/view/components/Textwidget.dart';
+import 'package:banking/view/components/back_icon.dart';
 import 'package:banking/view/components/password_textformfield.dart';
+import 'package:banking/view/components/simpl_button_text.dart';
 import 'package:banking/view/components/textButton-widget.dart';
 import 'package:banking/view/components/textformfield_widget.dart';
+import 'package:banking/view/source/authScreens/forget_password.dart';
+import 'package:banking/view/source/authScreens/sign_up_Screen.dart';
 import 'package:banking/view/utills/constants/AppColors.dart';
 import 'package:flutter/material.dart';
 
@@ -25,8 +29,8 @@ class _Signup_ScreenState extends State<Signup_Screen> {
       appBar: AppBar(
         backgroundColor: App_Colors.primarycolor,
         title: Row(children: [
-          Icon(Icons.arrow_back_ios,size: 20,color: App_Colors.secondrycolor,),
-          SizedBox(width: 5,),
+         // BackIcon(backicon: Icons.arrow_back_ios, iconColor: App_Colors.secondrycolor),
+          SizedBox(width:10,),
           SigninText(signtext: 'sign in', color: App_Colors.secondrycolor),
         ],),
       ),
@@ -58,22 +62,54 @@ class _Signup_ScreenState extends State<Signup_Screen> {
                 SizedBox(height: 30,),
                 textformfield(controller: hintcontroller, hintText: 'Enter Email', fontWeight: FontWeight.w500,),
                 SizedBox(height: 10,),
-                password_form(hintpassword: 'password', controller: passwordcontroller, fontWeight: FontWeight.w500, icon: Icons.visibility_off, iconcolor: Colors.green,),
+                password_form(hintpassword: 'password', controller: passwordcontroller, fontWeight: FontWeight.w500, icon: Icons.visibility, iconcolor: Colors.green,),
+                SizedBox(height: 10,),
                 Padding(
-                  padding: const EdgeInsets.only(left: 150),
-                  child: Text_button(text: 'Forgot your password ?',),
-                ),
-                SizedBox(height: 20,),
-                Center(child: Container(
-                    height: 40,width: 250,
+                  padding: const EdgeInsets.only(left: 300),
+                  child: Container(
+                    height: 30,
                     decoration: BoxDecoration(
                       color: App_Colors.primarycolor,
-                      borderRadius: BorderRadius.circular(20)
+                      borderRadius: BorderRadius.circular(10)
                     ),
-                    child: Text_button(text: 'Sign in',tcolor: Colors.white,))),
+                    child: InkWell(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgetPassword()));
+                        },
+                        child: Center(child: SimplButtonText(text: 'Forgot your password?', tcolor: App_Colors.secondrycolor))),
+                  ),
+                ),
+                // Padding(
+                //   padding: const EdgeInsets.only(left: 150),
+                //   child: InkWell(
+                //       onTap: (){
+                //         Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgetPassword()));
+                //       },
+                //       child: Text_button(text: 'Forgot your password?',tcolor: App_Colors.secondrycolor,)),
+                // ),
+                SizedBox(height: 20,),
+                Center(
+                  child: Container(
+                      height: 40,width: 250,
+                      decoration: BoxDecoration(
+                        color: App_Colors.primarycolor,
+                        borderRadius: BorderRadius.circular(20)
+                      ),
+                      // child: InkWell(
+                      //   onTap: (){
+                      //     Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpScreen()));
+                      //   },
+                      //     child: Text_button(text: 'Sign in',tcolor: Colors.white,))
+                    child: InkWell(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpScreen()));
+                        },
+                        child: Center(child: SimplButtonText(text: 'sign in', tcolor: App_Colors.secondrycolor))),
+                  ),
+                ),
                 SizedBox(height: 30,),
                 Padding(
-                  padding: const EdgeInsets.only(left: 130),
+                  padding: const EdgeInsets.only(left: 200),
                   child: Container(
                     height: 80,width: 80,
                     decoration: BoxDecoration(
@@ -83,7 +119,7 @@ class _Signup_ScreenState extends State<Signup_Screen> {
                 ),
                 SizedBox(height: 9,),
                 Padding(
-                  padding: const EdgeInsets.only(left: 80),
+                  padding: const EdgeInsets.only(left: 100),
                   child: Row(
                     children: [
                       SmallText(smalltext: 'Dont have an acount?', smalltextcolor: App_Colors.neutralcolor),

@@ -1,8 +1,10 @@
 import 'package:banking/view/components/Textwidget.dart';
+import 'package:banking/view/components/back_icon.dart';
 import 'package:banking/view/components/forget_text.dart';
 import 'package:banking/view/components/num_controller.dart';
 import 'package:banking/view/components/small_text.dart';
 import 'package:banking/view/components/textButton-widget.dart';
+import 'package:banking/view/source/authScreens/change_password.dart';
 import 'package:banking/view/utills/constants/AppColors.dart';
 import 'package:flutter/material.dart';
 
@@ -24,8 +26,8 @@ class _Forget_2State extends State<Forget_2> {
         backgroundColor: App_Colors.secondrycolor,
         title: Row(
           children: [
-            Icon(Icons.arrow_back_ios,color: App_Colors.neutralcolor,),
-            SizedBox(width: 10,),
+            //BackIcon(backicon: Icons.arrow_back_ios, iconColor: App_Colors.neutralcolor),
+            SizedBox(width: 15,),
             SigninText(signtext: 'Forgot password', color: App_Colors.neutralcolor),
           ],
         ),
@@ -44,7 +46,7 @@ class _Forget_2State extends State<Forget_2> {
             children: [
               Container(
                   height: 40,
-                  width: 230,
+                  width: 200,
                   child: NumController(num_hint: ' code', controller:codecontroller)),
               SizedBox(width: 20,),
               Container(
@@ -57,7 +59,7 @@ class _Forget_2State extends State<Forget_2> {
                       onTap: (){
 
                       },
-                      child: Text_button(text: 'Resend',tcolor: App_Colors.secondrycolor,)))
+                      child: Text_button(text: 'resend',tcolor: App_Colors.secondrycolor,)))
             ],
           ),
         ),
@@ -74,7 +76,11 @@ class _Forget_2State extends State<Forget_2> {
                   color: App_Colors.primarycolor,
                   borderRadius: BorderRadius.circular(30),
                 ),
-                child: Text_button(text: 'Change password',tcolor: App_Colors.secondrycolor,)),
+                child: InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ChangePassword()));
+                    },
+                    child: Text_button(text: 'Change password',tcolor: App_Colors.secondrycolor,))),
           ),
           SizedBox(height: 20,),
           Center(child: SmallText(smalltext: 'change your phone number', smalltextcolor: App_Colors.primarycolor))

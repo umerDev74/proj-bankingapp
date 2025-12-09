@@ -1,8 +1,11 @@
 import 'package:banking/view/components/Textwidget.dart';
+import 'package:banking/view/components/back_icon.dart';
 import 'package:banking/view/components/forget_text.dart';
 import 'package:banking/view/components/num_controller.dart';
 import 'package:banking/view/components/small_text.dart';
 import 'package:banking/view/components/textButton-widget.dart';
+import 'package:banking/view/source/authScreens/change_password.dart';
+import 'package:banking/view/source/authScreens/forget.2.dart';
 import 'package:banking/view/utills/constants/AppColors.dart';
 import 'package:flutter/material.dart';
 
@@ -22,8 +25,8 @@ class _ForgetPasswordState extends State<ForgetPassword> {
       appBar: AppBar(
         backgroundColor: App_Colors.secondrycolor,
         title: Row(children: [
-          Icon(Icons.arrow_back_ios,color: Colors.black,),
-          SizedBox(width: 10,),
+         // BackIcon(backicon: Icons.arrow_back_ios, iconColor: App_Colors.neutralcolor),
+          SizedBox(width: 15,),
           SigninText(signtext: 'Forget password', color: App_Colors.neutralcolor)
         ],),
       ),
@@ -48,9 +51,12 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                     color: App_Colors.primarycolor,
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  child: Text_button(text: 'send',tcolor: App_Colors.secondrycolor,)),
+                  child: InkWell(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Forget_2()));
+                      },
+                      child: Center(child: Text_button(text: 'send',tcolor: App_Colors.secondrycolor,)))),
             )
-
         ],),
       ),
     );

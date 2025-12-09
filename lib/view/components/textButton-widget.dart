@@ -8,9 +8,6 @@ class Text_button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(onPressed: (){
-      Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpScreen()));
-    }, child:
-    Text(text,style: TextStyle(color: tcolor),));
+    return Center(child: Text(text,style: TextStyle(color: tcolor),));
   }
 }

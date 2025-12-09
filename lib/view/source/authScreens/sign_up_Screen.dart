@@ -1,10 +1,13 @@
 import 'package:banking/view/components/Textwidget.dart';
+import 'package:banking/view/components/back_icon.dart';
 import 'package:banking/view/components/headingtext.dart';
 import 'package:banking/view/components/name_controller.dart';
 import 'package:banking/view/components/password_textformfield.dart';
+import 'package:banking/view/components/simpl_button_text.dart';
 import 'package:banking/view/components/small_text.dart';
 import 'package:banking/view/components/textButton-widget.dart';
 import 'package:banking/view/components/textformfield_widget.dart';
+import 'package:banking/view/source/authScreens/ok_screen.dart';
 import 'package:banking/view/utills/constants/AppColors.dart';
 import 'package:flutter/material.dart';
 
@@ -26,8 +29,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
       appBar: AppBar(
         backgroundColor: App_Colors.primarycolor,
         title: Row(children: [
-          Icon(Icons.arrow_back_ios,size: 20,color: App_Colors.secondrycolor,),
-          SizedBox(width: 5,),
+          //BackIcon(backicon: Icons.arrow_back_ios, iconColor: App_Colors.secondrycolor),
+          SizedBox(width: 15,),
           SigninText(signtext: 'sign up', color: App_Colors.secondrycolor),
         ],),
       ),
@@ -62,7 +65,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(height: 10,),
                   textformfield(controller: hintcontroller, hintText: 'Text input', fontWeight: FontWeight.w500),
                  SizedBox(height: 10,),
-                  password_form(hintpassword: 'password', controller: passwordcontroller, fontWeight: FontWeight.w500, iconcolor: Colors.green, icon: Icons.visibility_off),
+                  password_form(hintpassword: 'password', controller: passwordcontroller, fontWeight: FontWeight.w500, iconcolor: Colors.green, icon: Icons.visibility),
                   SizedBox(height: 25,),
                   Row(
                     children: [
@@ -74,7 +77,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                        ),
                       ),
                       SizedBox(width: 20,),
-                      Text('by creating an account your aggree to our \nTerm And Condition ....',
+                      Text('by creating an account your agree to our \nTerm And Condition ....',
                       style: TextStyle(color: App_Colors.neutralcolor),),
                     ],
                   ),
@@ -85,7 +88,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           color: App_Colors.primarycolor,
                           borderRadius: BorderRadius.circular(20)
                       ),
-                      child: Text_button(text: 'sign up',tcolor: App_Colors.secondrycolor,))),
+                      child: InkWell(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>OkScreen()));
+                          },
+                          child: Center(child: SimplButtonText(text: 'sign up', tcolor: App_Colors.secondrycolor))))),
+                  //Text_button(text: 'sign up',tcolor: App_Colors.secondrycolor,)
                   SizedBox(height: 10,),
                   Padding(
                     padding: const EdgeInsets.only(left: 70),
