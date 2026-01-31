@@ -1,5 +1,4 @@
 import 'package:banking/view/components/Textwidget.dart';
-import 'package:banking/view/components/back_icon.dart';
 import 'package:banking/view/components/password_textformfield.dart';
 import 'package:banking/view/components/simpl_button_text.dart';
 import 'package:banking/view/components/textButton-widget.dart';
@@ -29,7 +28,6 @@ class _Signup_ScreenState extends State<Signup_Screen> {
       appBar: AppBar(
         backgroundColor: App_Colors.primarycolor,
         title: Row(children: [
-         // BackIcon(backicon: Icons.arrow_back_ios, iconColor: App_Colors.secondrycolor),
           SizedBox(width:10,),
           SigninText(signtext: 'sign in', color: App_Colors.secondrycolor),
         ],),
@@ -62,7 +60,7 @@ class _Signup_ScreenState extends State<Signup_Screen> {
                 SizedBox(height: 30,),
                 textformfield(controller: hintcontroller, hintText: 'Enter Email', fontWeight: FontWeight.w500,),
                 SizedBox(height: 10,),
-                password_form(hintpassword: 'password', controller: passwordcontroller, fontWeight: FontWeight.w500, icon: Icons.visibility, iconcolor: Colors.green,),
+                PasswordTextformfield(hint_password: 'password', controller: passwordcontroller),
                 SizedBox(height: 10,),
                 Padding(
                   padding: const EdgeInsets.only(left: 300),
@@ -136,3 +134,6 @@ class _Signup_ScreenState extends State<Signup_Screen> {
     );
   }
 }
+
+
+

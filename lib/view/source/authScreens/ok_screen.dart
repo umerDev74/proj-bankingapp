@@ -5,6 +5,8 @@ import 'package:banking/view/components/textButton-widget.dart';
 import 'package:banking/view/utills/constants/AppColors.dart';
 import 'package:flutter/material.dart';
 
+import '../../components/simpl_button_text.dart';
+
 class OkScreen extends StatefulWidget {
   const OkScreen({super.key});
 
@@ -43,7 +45,12 @@ class _OkScreenState extends State<OkScreen> {
                 color: App_Colors.primarycolor,
                 borderRadius: BorderRadius.circular(30),
               ),
-              child: Text_button(text: 'OK',tcolor: App_Colors.secondrycolor,)),
+              child: InkWell(
+                  onTap: (){},
+                  child: Center(child: SimplButtonText(text: 'OK', tcolor: App_Colors.secondrycolor)
+              )
+          ),
+        ),
         ),
       ],),
     );

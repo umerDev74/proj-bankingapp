@@ -1,5 +1,5 @@
 import 'package:banking/view/components/Textwidget.dart';
-import 'package:banking/view/components/back_icon.dart';
+//import 'package:banking/view/components/back_icon.dart';
 import 'package:banking/view/components/headingtext.dart';
 import 'package:banking/view/components/name_controller.dart';
 import 'package:banking/view/components/password_textformfield.dart';
@@ -65,7 +65,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(height: 10,),
                   textformfield(controller: hintcontroller, hintText: 'Text input', fontWeight: FontWeight.w500),
                  SizedBox(height: 10,),
-                  password_form(hintpassword: 'password', controller: passwordcontroller, fontWeight: FontWeight.w500, iconcolor: Colors.green, icon: Icons.visibility),
+                  PasswordTextformfield(hint_password: 'password', controller: passwordcontroller),
+                  //password_form(hintpassword: 'password', controller: passwordcontroller, fontWeight: FontWeight.w500, iconcolor: Colors.green, icon: Icons.visibility),
                   SizedBox(height: 25,),
                   Row(
                     children: [

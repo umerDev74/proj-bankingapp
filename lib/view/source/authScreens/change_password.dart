@@ -1,5 +1,5 @@
 import 'package:banking/view/components/Textwidget.dart';
-import 'package:banking/view/components/back_icon.dart';
+//import 'package:banking/view/components/back_icon.dart';
 import 'package:banking/view/components/password_textformfield.dart';
 import 'package:banking/view/components/small_text.dart';
 import 'package:banking/view/components/textButton-widget.dart';
@@ -37,11 +37,13 @@ class _ChangePasswordState extends State<ChangePassword> {
           SizedBox(height: 50,),
           SmallText(smalltext: 'Type your new password', smalltextcolor: App_Colors.neutralcolor),
           SizedBox(height: 20,),
-          password_form(hintpassword: 'New password', controller: changecontroller, fontWeight: FontWeight.w500, iconcolor: App_Colors.neutralcolor, icon: Icons.visibility),
+          PasswordTextformfield(hint_password: 'New password', controller: changecontroller),
+         // password_form(hintpassword: 'New password', controller: changecontroller, fontWeight: FontWeight.w500, iconcolor: App_Colors.neutralcolor, icon: Icons.visibility),
             SizedBox(height: 20,),
             SmallText(smalltext: 'Confirm password', smalltextcolor: App_Colors.neutralcolor),
             SizedBox(height: 20,),
-            password_form(hintpassword: 'New password', controller: confirmcontroller, fontWeight: FontWeight.w500, iconcolor: App_Colors.neutralcolor, icon: Icons.visibility),
+           PasswordTextformfield(hint_password: 'New password', controller: confirmcontroller),
+           // password_form(hintpassword: 'New password', controller: confirmcontroller, fontWeight: FontWeight.w500, iconcolor: App_Colors.neutralcolor, icon: Icons.visibility),
             SizedBox(height: 50,),
             Center(
               child: Container(
